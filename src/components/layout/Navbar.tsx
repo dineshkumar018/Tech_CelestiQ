@@ -25,18 +25,18 @@ export function Navbar() {
         
         {/* Logo Section */}
         <div className="flex items-center gap-3">
-          <Link href="/" className="flex items-center gap-0">
-            <div className="relative h-14 w-14 overflow-hidden flex items-center justify-center">
+          <Link href="/" className="flex items-center gap-2">
+            <div className="relative h-12 w-12 flex items-center justify-center shrink-0">
               <Image 
                 src="/logo.png" 
                 alt="Tech Celestiq Logo" 
                 fill 
-                className="object-contain mix-blend-screen"
+                className="object-contain"
               />
             </div>
-            <span className="hidden sm:inline-block font-bold text-xl tracking-tight ml-1">
-              <span className="text-white">Tech</span>
-              <span className="text-[#00D4FF]">Nest</span>
+            <span className="hidden sm:inline-block font-bold text-2xl tracking-tight">
+              <span className="text-[#3b82f6]">Tech_</span>
+              <span className="text-[#06b6d4]">CelestiQ</span>
             </span>
           </Link>
         </div>
@@ -77,18 +77,18 @@ export function Navbar() {
             <SheetContent side="right" className="w-[300px] border-l-border bg-black/95 backdrop-blur p-6">
               <SheetTitle className="sr-only">Navigation Menu</SheetTitle>
               <div className="flex flex-col h-full">
-                <div className="flex items-center gap-1 mb-8 pb-4 border-b border-white/10">
-                  <div className="relative h-14 w-14 overflow-hidden flex items-center justify-center">
+                <div className="flex items-center gap-3 mb-8 pb-4 border-b border-white/10">
+                  <div className="relative h-12 w-12 flex items-center justify-center shrink-0">
                     <Image 
                       src="/logo.png" 
                       alt="Tech Celestiq Logo" 
                       fill 
-                      className="object-contain mix-blend-screen"
+                      className="object-contain"
                     />
                   </div>
-                  <span className="font-bold tracking-tight text-xl">
-                    <span className="text-white">Tech</span>
-                    <span className="text-[#00D4FF]">Nest</span>
+                  <span className="font-bold tracking-tight text-2xl">
+                    <span className="text-[#3b82f6]">Tech_</span>
+                    <span className="text-[#06b6d4]">CelestiQ</span>
                   </span>
                 </div>
                 
