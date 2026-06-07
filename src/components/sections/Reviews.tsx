@@ -88,7 +88,7 @@ export function Reviews() {
         {/* Overall Rating Header */}
         <div className="flex flex-col sm:flex-row items-center justify-between border-b border-white/10 pb-6 mb-10 max-w-6xl mx-auto">
           <div className="flex items-center gap-4 mb-4 sm:mb-0">
-            <span className="font-bold text-lg text-white">Tech_CelestiQ Reviews</span>
+            <span className="font-bold text-lg text-white">TechNest Reviews</span>
             <div className="flex items-center gap-1">
               <span className="font-bold text-lg text-white">5.0</span>
               <div className="flex items-center">

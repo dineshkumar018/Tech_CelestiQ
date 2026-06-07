@@ -35,8 +35,8 @@ export function Navbar() {
               />
             </div>
             <span className="hidden sm:inline-block font-bold text-xl tracking-tight ml-1">
-              <span className="text-[#3b82f6]">Tech_</span>
-              <span className="text-[#06b6d4]">CelestiQ</span>
+              <span className="text-white">Tech</span>
+              <span className="text-[#00D4FF]">Nest</span>
             </span>
           </Link>
         </div>
@@ -87,8 +87,8 @@ export function Navbar() {
                     />
                   </div>
                   <span className="font-bold tracking-tight text-xl">
-                    <span className="text-[#3b82f6]">Tech_</span>
-                    <span className="text-[#06b6d4]">CelestiQ</span>
+                    <span className="text-white">Tech</span>
+                    <span className="text-[#00D4FF]">Nest</span>
                   </span>
                 </div>
                 
