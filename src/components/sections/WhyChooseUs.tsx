@@ -26,14 +26,14 @@ const CARDS = [
 
 // Circular positions (8 items, 45 degree increments)
 const POSITIONS = [
-  { x: 88, y: 50 },
-  { x: 76.8, y: 76.8 },
-  { x: 50, y: 88 },
-  { x: 23.1, y: 76.8 },
-  { x: 12, y: 50 },
-  { x: 23.1, y: 23.1 },
-  { x: 50, y: 12 },
-  { x: 76.8, y: 23.1 }
+  { x: 92, y: 50 },
+  { x: 79.7, y: 79.7 },
+  { x: 50, y: 92 },
+  { x: 20.3, y: 79.7 },
+  { x: 8, y: 50 },
+  { x: 20.3, y: 20.3 },
+  { x: 50, y: 8 },
+  { x: 79.7, y: 20.3 }
 ];
 
 export function WhyChooseUs() {
@@ -107,53 +107,56 @@ export function WhyChooseUs() {
           </div>
 
           {/* Orbit Rings */}
-          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[30%] h-[30%] rounded-full border border-solid border-[#007BFF]/20 animate-[spin_40s_linear_infinite_reverse] pointer-events-none" />
-          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[76%] h-[76%] rounded-full border border-dashed border-[#00D4FF]/20 animate-[spin_80s_linear_infinite] pointer-events-none">
-            {/* Orbiting Glowing Nodes */}
-            <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 h-3 w-3 rounded-full bg-[#00D4FF] shadow-[0_0_15px_rgba(0,212,255,1)]" />
-            <div className="absolute bottom-0 left-1/2 -translate-x-1/2 translate-y-1/2 h-2 w-2 rounded-full bg-[#007BFF] shadow-[0_0_10px_rgba(0,123,255,1)]" />
-            <div className="absolute left-0 top-1/2 -translate-x-1/2 -translate-y-1/2 h-2.5 w-2.5 rounded-full bg-white shadow-[0_0_12px_rgba(255,255,255,0.8)]" />
+          
+          {/* Inner Ring (Slow moving glow ball) */}
+          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[30%] h-[30%] rounded-full border border-solid border-[#007BFF]/20 animate-[spin_30s_linear_infinite_reverse] pointer-events-none z-10">
+            <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 h-3.5 w-3.5 rounded-full bg-[#007BFF] shadow-[0_0_20px_4px_rgba(0,123,255,0.8)]" />
           </div>
 
-          {/* Orbiting Cards */}
-          {CARDS.map((card, i) => {
-            const Icon = card.icon;
-            const pos = POSITIONS[i];
+          {/* Outer Ring (Static dashed path) */}
+          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[84%] h-[84%] rounded-full border border-dashed border-[#00D4FF]/20 pointer-events-none z-10" />
 
-            return (
-              <motion.div
-                key={card.title}
-                initial={{ opacity: 0, scale: 0 }}
-                whileInView={{ opacity: 1, scale: 1 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.6, delay: 0.2 + (i * 0.1), type: "spring", stiffness: 50 }}
-                className="absolute -translate-x-1/2 -translate-y-1/2 w-44 lg:w-52 rounded-2xl p-[1px] overflow-hidden group cursor-pointer z-10 hover:z-30"
-                style={{ left: `${pos.x}%`, top: `${pos.y}%` }}
-              >
-                {/* Continuous rotating glow border */}
-                <motion.div 
-                  animate={{ rotate: 360 }}
-                  transition={{ duration: 6, repeat: Infinity, ease: "linear" }}
-                  className="absolute -inset-[150%] opacity-80"
-                  style={{
-                    background: "conic-gradient(from 0deg, transparent 60%, #00D4FF 80%, #007BFF 100%)"
-                  }}
-                />
-                
-                {/* Inner Card Content */}
-                <div className="relative bg-[#030712]/95 backdrop-blur-xl h-full w-full rounded-[15px] p-5 hover:bg-[#030712]/60 transition-colors duration-500 flex flex-col items-center text-center shadow-xl">
-                  <div className="h-10 w-10 lg:h-12 lg:w-12 rounded-full bg-[#007BFF]/10 flex items-center justify-center mb-3 border border-[#007BFF]/20 group-hover:bg-[#00D4FF]/20 group-hover:border-[#00D4FF]/40 transition-colors relative overflow-hidden">
-                    <div className="absolute inset-0 bg-[#00D4FF]/20 blur-md opacity-0 group-hover:opacity-100 transition-opacity" />
-                    <Icon className="h-5 w-5 lg:h-6 lg:w-6 text-[#00D4FF] relative z-10" />
+          {/* Orbiting Cards Container */}
+          <div className="absolute inset-0 animate-[spin_60s_linear_infinite]">
+            {CARDS.map((card, i) => {
+              const Icon = card.icon;
+              const pos = POSITIONS[i];
+
+              return (
+                <motion.div
+                  key={card.title}
+                  initial={{ opacity: 0, scale: 0 }}
+                  whileInView={{ opacity: 1, scale: 1 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.6, delay: 0.2 + (i * 0.1), type: "spring", stiffness: 50 }}
+                  className="absolute -translate-x-1/2 -translate-y-1/2 w-48 lg:w-64 z-10 hover:z-30"
+                  style={{ left: `${pos.x}%`, top: `${pos.y}%` }}
+                >
+                  <div className="w-full h-full animate-[spin_60s_linear_infinite_reverse] rounded-2xl p-[1px] relative overflow-hidden group cursor-pointer">
+                    {/* Continuous rotating glow border */}
+                    <div 
+                      className="absolute -inset-[150%] opacity-80 animate-[spin_6s_linear_infinite]"
+                      style={{
+                        background: "conic-gradient(from 0deg, transparent 60%, #00D4FF 80%, #007BFF 100%)"
+                      }}
+                    />
+                    
+                    {/* Inner Card Content */}
+                    <div className="relative bg-[#030712]/95 backdrop-blur-xl h-full w-full rounded-[15px] p-6 hover:bg-[#030712]/60 transition-colors duration-500 flex flex-col items-center text-center shadow-xl">
+                      <div className="h-12 w-12 lg:h-14 lg:w-14 rounded-full bg-[#007BFF]/10 flex items-center justify-center mb-3 border border-[#007BFF]/20 group-hover:bg-[#00D4FF]/20 group-hover:border-[#00D4FF]/40 transition-colors relative overflow-hidden">
+                        <div className="absolute inset-0 bg-[#00D4FF]/20 blur-md opacity-0 group-hover:opacity-100 transition-opacity" />
+                        <Icon className="h-6 w-6 lg:h-7 lg:w-7 text-[#00D4FF] relative z-10" />
+                      </div>
+                      <h3 className="text-base lg:text-lg font-bold text-white mb-2 group-hover:text-[#00D4FF] transition-colors">{card.title}</h3>
+                      <p className="text-xs lg:text-sm text-zinc-400 leading-relaxed opacity-80 group-hover:opacity-100 group-hover:text-zinc-300 transition-all">
+                        {card.desc}
+                      </p>
+                    </div>
                   </div>
-                  <h3 className="text-sm font-bold text-white mb-2 group-hover:text-[#00D4FF] transition-colors">{card.title}</h3>
-                  <p className="text-[10px] lg:text-[11px] text-zinc-400 leading-relaxed opacity-80 group-hover:opacity-100 group-hover:text-zinc-300 transition-all">
-                    {card.desc}
-                  </p>
-                </div>
-              </motion.div>
-            );
-          })}
+                </motion.div>
+              );
+            })}
+          </div>
         </div>
 
       </div>
