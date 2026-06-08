@@ -29,7 +29,10 @@ export default function RootLayout({
       lang="en"
       className={`${inter.variable} ${spaceGrotesk.variable} h-full antialiased dark`}
     >
-      <body className="min-h-full flex flex-col font-sans bg-[#030712] text-white">
+      <body 
+        className="min-h-full flex flex-col bg-[#030712] text-white"
+        style={{ fontFamily: "'Inter', sans-serif", fontWeight: 400 }}
+      >
         {/* Global Particles Background */}
         <div className="fixed inset-0 z-0 pointer-events-none">
           <AboutParticles />

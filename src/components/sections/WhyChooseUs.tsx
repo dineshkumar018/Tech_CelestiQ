@@ -142,13 +142,13 @@ export function WhyChooseUs() {
                     />
                     
                     {/* Inner Card Content */}
-                    <div className="relative bg-[#030712]/95 backdrop-blur-xl h-full w-full rounded-[15px] p-6 hover:bg-[#030712]/60 transition-colors duration-500 flex flex-col items-center text-center shadow-xl">
-                      <div className="h-12 w-12 lg:h-14 lg:w-14 rounded-full bg-[#007BFF]/10 flex items-center justify-center mb-3 border border-[#007BFF]/20 group-hover:bg-[#00D4FF]/20 group-hover:border-[#00D4FF]/40 transition-colors relative overflow-hidden">
+                    <div className="relative bg-[#030712] backdrop-blur-3xl h-full w-full rounded-[15px] p-6 hover:bg-[#030712]/90 transition-colors duration-500 flex flex-col items-center text-center shadow-xl">
+                      <div className="h-12 w-12 lg:h-14 lg:w-14 rounded-full bg-[#007BFF]/10 flex items-center justify-center mb-3 border border-[#007BFF]/20 group-hover:bg-[#00D4FF]/20 group-hover:border-[#00D4FF]/40 transition-colors relative overflow-hidden shrink-0">
                         <div className="absolute inset-0 bg-[#00D4FF]/20 blur-md opacity-0 group-hover:opacity-100 transition-opacity" />
                         <Icon className="h-6 w-6 lg:h-7 lg:w-7 text-[#00D4FF] relative z-10" />
                       </div>
                       <h3 className="text-base lg:text-lg font-bold text-white mb-2 group-hover:text-[#00D4FF] transition-colors">{card.title}</h3>
-                      <p className="text-xs lg:text-sm text-zinc-400 leading-relaxed opacity-80 group-hover:opacity-100 group-hover:text-zinc-300 transition-all">
+                      <p className="text-sm lg:text-[15px] text-zinc-300 leading-relaxed group-hover:text-white transition-colors">
                         {card.desc}
                       </p>
                     </div>
