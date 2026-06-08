@@ -57,7 +57,7 @@ export function WhyChooseUs() {
             whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.2 }}
-            className="w-16 h-1 bg-[#00D4FF] mx-auto rounded-full shadow-[0_0_10px_rgba(0,212,255,0.8)]" 
+            className="w-16 h-1 bg-brand-accent mx-auto rounded-full shadow-[0_0_10px_rgba(0,212,255,0.8)]" 
           />
         </div>
 
@@ -72,10 +72,10 @@ export function WhyChooseUs() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: i * 0.1 }}
-                className="bg-white/[0.02] border border-white/10 rounded-2xl p-6 flex flex-col items-center text-center relative overflow-hidden group"
+                className="bg-white/2 border border-white/10 rounded-2xl p-6 flex flex-col items-center text-center relative overflow-hidden group"
               >
-                <div className="h-12 w-12 rounded-full bg-[#007BFF]/10 flex items-center justify-center mb-4 border border-[#007BFF]/20">
-                  <Icon className="h-6 w-6 text-[#00D4FF]" />
+                <div className="h-12 w-12 rounded-full bg-brand-primary/10 flex items-center justify-center mb-4 border border-brand-primary/20">
+                  <Icon className="h-6 w-6 text-brand-accent" />
                 </div>
                 <h3 className="text-lg font-bold text-white mb-2">{card.title}</h3>
                 <p className="text-sm text-zinc-400">{card.desc}</p>
@@ -85,7 +85,7 @@ export function WhyChooseUs() {
         </div>
 
         {/* Desktop View: Orbit Ring Layout */}
-        <div className="hidden md:block relative w-full max-w-5xl mx-auto aspect-square max-h-[800px]">
+        <div className="hidden md:block relative w-full max-w-5xl mx-auto aspect-square max-h-200">
           
           {/* Central Logo */}
           <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 flex flex-col items-center justify-center z-20">
@@ -94,9 +94,9 @@ export function WhyChooseUs() {
               whileInView={{ scale: 1 }}
               viewport={{ once: true }}
               transition={{ duration: 0.8, type: "spring" }}
-              className="relative h-28 w-28 rounded-full bg-[#030712] border border-[#00D4FF]/40 flex items-center justify-center shadow-[0_0_40px_rgba(0,212,255,0.3)] z-20"
+              className="relative h-28 w-28 rounded-full bg-space-black border border-brand-accent/40 flex items-center justify-center shadow-[0_0_40px_rgba(0,212,255,0.3)] z-20"
             >
-              <div className="absolute inset-0 rounded-full animate-ping bg-[#00D4FF]/10" />
+              <div className="absolute inset-0 rounded-full animate-ping bg-brand-accent/10" />
               <Image 
                 src="/logo.png" 
                 alt="Tech_CelestiQ Logo" 
@@ -109,12 +109,12 @@ export function WhyChooseUs() {
           {/* Orbit Rings */}
           
           {/* Inner Ring (Slow moving glow ball) */}
-          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[30%] h-[30%] rounded-full border border-solid border-[#007BFF]/20 animate-[spin_30s_linear_infinite_reverse] pointer-events-none z-10">
-            <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 h-3.5 w-3.5 rounded-full bg-[#007BFF] shadow-[0_0_20px_4px_rgba(0,123,255,0.8)]" />
+          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[30%] h-[30%] rounded-full border border-solid border-brand-primary/20 animate-[spin_30s_linear_infinite_reverse] pointer-events-none z-10">
+            <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 h-3.5 w-3.5 rounded-full bg-brand-primary shadow-[0_0_20px_4px_rgba(0,123,255,0.8)]" />
           </div>
 
           {/* Outer Ring (Static dashed path) */}
-          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[84%] h-[84%] rounded-full border border-dashed border-[#00D4FF]/20 pointer-events-none z-10" />
+          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[84%] h-[84%] rounded-full border border-dashed border-brand-accent/20 pointer-events-none z-10" />
 
           {/* Orbiting Cards Container */}
           <div className="absolute inset-0 animate-[spin_60s_linear_infinite]">
@@ -132,22 +132,22 @@ export function WhyChooseUs() {
                   className="absolute -translate-x-1/2 -translate-y-1/2 w-48 lg:w-64 z-10 hover:z-30"
                   style={{ left: `${pos.x}%`, top: `${pos.y}%` }}
                 >
-                  <div className="w-full h-full animate-[spin_60s_linear_infinite_reverse] rounded-2xl p-[1px] relative overflow-hidden group cursor-pointer">
+                  <div className="w-full h-full animate-[spin_60s_linear_infinite_reverse] rounded-2xl p-px relative overflow-hidden group cursor-pointer">
                     {/* Continuous rotating glow border */}
                     <div 
-                      className="absolute -inset-[150%] opacity-80 animate-[spin_6s_linear_infinite]"
+                      className="absolute inset-[-150%] opacity-80 animate-[spin_6s_linear_infinite]"
                       style={{
                         background: "conic-gradient(from 0deg, transparent 60%, #00D4FF 80%, #007BFF 100%)"
                       }}
                     />
                     
                     {/* Inner Card Content */}
-                    <div className="relative bg-[#030712] backdrop-blur-3xl h-full w-full rounded-[15px] p-6 hover:bg-[#030712]/90 transition-colors duration-500 flex flex-col items-center text-center shadow-xl">
-                      <div className="h-12 w-12 lg:h-14 lg:w-14 rounded-full bg-[#007BFF]/10 flex items-center justify-center mb-3 border border-[#007BFF]/20 group-hover:bg-[#00D4FF]/20 group-hover:border-[#00D4FF]/40 transition-colors relative overflow-hidden shrink-0">
-                        <div className="absolute inset-0 bg-[#00D4FF]/20 blur-md opacity-0 group-hover:opacity-100 transition-opacity" />
-                        <Icon className="h-6 w-6 lg:h-7 lg:w-7 text-[#00D4FF] relative z-10" />
+                    <div className="relative bg-space-black backdrop-blur-3xl h-full w-full rounded-[15px] p-6 hover:bg-space-black/90 transition-colors duration-500 flex flex-col items-center text-center shadow-xl">
+                      <div className="h-12 w-12 lg:h-14 lg:w-14 rounded-full bg-brand-primary/10 flex items-center justify-center mb-3 border border-brand-primary/20 group-hover:bg-brand-accent/20 group-hover:border-brand-accent/40 transition-colors relative overflow-hidden shrink-0">
+                        <div className="absolute inset-0 bg-brand-accent/20 blur-md opacity-0 group-hover:opacity-100 transition-opacity" />
+                        <Icon className="h-6 w-6 lg:h-7 lg:w-7 text-brand-accent relative z-10" />
                       </div>
-                      <h3 className="text-base lg:text-lg font-bold text-white mb-2 group-hover:text-[#00D4FF] transition-colors">{card.title}</h3>
+                      <h3 className="text-base lg:text-lg font-bold text-white mb-2 group-hover:text-brand-accent transition-colors">{card.title}</h3>
                       <p className="text-sm lg:text-[15px] text-zinc-300 leading-relaxed group-hover:text-white transition-colors">
                         {card.desc}
                       </p>
